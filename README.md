@@ -16,7 +16,7 @@ POST request to extract endpoint:
 succuss output (200):
 ```json
 {
-    "keywords": ["test", "text"]
+    "keywords": ["word", "word"]
 }
 ```
 
