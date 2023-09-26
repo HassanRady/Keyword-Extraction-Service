@@ -1,6 +1,6 @@
 import uvicorn
 from fastapi import FastAPI, Request
-from main import *
+from keywords_extractor import *
 
 
 app = FastAPI()
