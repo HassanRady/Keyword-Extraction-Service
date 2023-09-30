@@ -3,7 +3,10 @@ from confluent_kafka import Consumer, Producer, KafkaError, KafkaException
 from config import settings
 from keywords_extractor import pipeline
 import json
+from logger import get_file_logger
 
+
+logger = get_file_logger(__name__, "logs")
 
 def value_serializer(value):
     return json.dumps(value).encode('utf-8') 
@@ -46,7 +49,7 @@ def consume_produce_loop(consumer, consume_topics, produce_topic):
 
             if msg.error():
                 if msg.error().code() == KafkaError._PARTITION_EOF:
-                    sys.stderr.write('%% %s [%d] reached end at offset %d\n' %
+                    logger.error('%% %s [%d] reached end at offset %d\n' %
                                      (msg.topic(), msg.partition(), msg.offset()))
                 elif msg.error():
                     raise KafkaException(msg.error())
