@@ -1,4 +1,3 @@
-import sys
 from confluent_kafka import Consumer, Producer, KafkaError, KafkaException
 from config import settings
 from keywords_extractor import pipeline
