@@ -1,14 +1,14 @@
 FROM python:3.9-slim
 
 WORKDIR /src
-COPY . /src
-COPY ./requirements.txt .
+
+COPY config.py .
+COPY logger.py .
+COPY keywords_extractor.py .
+COPY main.py .
+COPY requirements.txt .
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-
-# EXPOSE 9004
-
-# CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "9004"]
-
+CMD ["python", "main.py"]
