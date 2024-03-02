@@ -1,10 +1,10 @@
 from typing import Any
 
 from confluent_kafka import Consumer, Producer, KafkaError, KafkaException
-from config import settings
-from keywords_extractor import pipeline
+from src.config import settings
+from src.keywords_extractor import pipeline
 import json
-from logger import get_file_logger
+from src.logger import get_file_logger
 
 
 logger = get_file_logger(__name__, "logs")

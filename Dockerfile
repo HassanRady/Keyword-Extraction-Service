@@ -2,9 +2,7 @@ FROM python:3.9-slim
 
 WORKDIR /src
 
-COPY config.py .
-COPY logger.py .
-COPY keywords_extractor.py .
+COPY src/ src/
 COPY main.py .
 COPY requirements.txt .
 
