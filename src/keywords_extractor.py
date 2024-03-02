@@ -2,10 +2,6 @@ import yake
 
 kw_extractor = yake.KeywordExtractor()
 
-# def preprocess(json_data):
-#   text = json_data['text']
-#   return " ".join(text)
-
 
 def extract_keywords(text: str) -> list:
     return kw_extractor.extract_keywords(text)

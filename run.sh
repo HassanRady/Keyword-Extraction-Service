@@ -1,2 +1,1 @@
-source venv/bin/activate
-uvicorn app:app --host 127.0.0.1 --port 9004 --reload 
+docker run --env-file .env --network reddit_kafka_default keywords_extraction
